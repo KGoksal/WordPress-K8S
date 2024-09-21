@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wordpress
+  namespace: <your-namespace>  # Specify the namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress:6.3.1-php8.1  # Specify a stable version of WordPress with PHP 8.1
+          ports:
+            - containerPort: 80
+              name: http  
+          volumeMounts:
+            - name: wordpress-data
+              mountPath: /var/www/html  # Mount the persistent volume at the WordPress data directory
+          env:
+            - name: WORDPRESS_DB_HOST
+              value: mysql-service.your-namespace.svc.cluster.local  # Update the service hostname with the namespace
+            - name: WORDPRESS_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_ROOT_PASSWORD  # Reference the password from a Kubernetes secret
+            - name: WORDPRESS_DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: MYSQL_ROOT_USER  # Reference the user from a Kubernetes secret
+            - name: WORDPRESS_DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: wordpress-config
+                  key: WORDPRESS_DB_NAME  # Reference the database name from a ConfigMap
+      volumes:
+        - name: wordpress-data
+          persistentVolumeClaim:
+            claimName: wordpress-pvc
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
