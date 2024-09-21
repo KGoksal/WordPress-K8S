@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
-  namespace: your-namespace  # Specify the namespace
+  namespace: <your-namespace>  # Specify the namespace
 spec:
   accessModes:
     - ReadWriteOnce
