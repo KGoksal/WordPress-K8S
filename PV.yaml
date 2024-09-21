@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: your-pv-name #change here
+  name: <your-namespace> #change here
   namespace: your-namespace #change here
 spec:
   capacity:
