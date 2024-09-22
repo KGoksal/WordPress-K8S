@@ -9,6 +9,6 @@ spec:
   volumeMode: Filesystem 
   accessModes:
     - ReadWriteOnce
-  storageClassName: local-path
+  storageClassName: local-path 
   hostPath:
     path: /mnt/data  # Path on the host machine
