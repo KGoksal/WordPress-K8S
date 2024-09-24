@@ -3,7 +3,6 @@
 This repository contains Kubernetes YAML configuration files for deploying WordPress and MySQL with persistent storage in a Kubernetes cluster.
 
 ## Files Included
-
 ### 1. `PV.yaml`
 - **Description:** Defines a PersistentVolume (PV) for MySQL data storage.
 - **Namespace:** `<your-namespace>`
