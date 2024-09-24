@@ -1,4 +1,4 @@
-# Kubernetes Configuration for WordPress and MySQL Deployment
+# Kubernetes Configuration for WordPress and MySQL Deployment 
 
 This repository contains Kubernetes YAML configuration files for deploying WordPress and MySQL with persistent storage in a Kubernetes cluster.
 
