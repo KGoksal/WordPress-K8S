@@ -84,7 +84,7 @@ To deploy the resources in a Kubernetes cluster:
 2. Apply the files in the following order:
 
    ```bash
-   kubectl apply -f mysql-secret.yaml
+   kubectl apply -f mysql-secret.yaml 
    kubectl apply -f PV.yaml
    kubectl apply -f PVC.yaml
    kubectl apply -f mysql-deployment.yaml
