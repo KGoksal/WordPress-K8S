@@ -77,7 +77,6 @@ This repository contains Kubernetes YAML configuration files for deploying WordP
 - **Description:** Updates or modifications to `wordpress-service.yaml`.
 
 ## Usage
-
 To deploy the resources in a Kubernetes cluster:
 
 1. Ensure you have a running Kubernetes cluster and `kubectl` configured.
