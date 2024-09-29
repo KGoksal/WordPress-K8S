@@ -10,7 +10,7 @@ This repository contains Kubernetes YAML configuration files for deploying WordP
 - **AccessMode:** `ReadWriteOnce`
 - **StorageClass:** `local-path`
 - **HostPath:** `/mnt/data`
-
+ 
 ### 2. `Update PV.yaml`
 - **Description:** Contains updates or changes made to the `PV.yaml` over time.
 
