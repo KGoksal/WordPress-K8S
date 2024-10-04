@@ -90,4 +90,4 @@ To deploy the resources in a Kubernetes cluster:
    kubectl apply -f mysql-service.yaml
    kubectl apply -f wordpress-deployment.yaml 
    kubectl apply -f wordpress-service.yaml
-   kubectl apply -f Ingress.yaml  
+   kubectl apply -f Ingress.yaml   
